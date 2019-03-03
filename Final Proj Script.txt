@@ -1,0 +1,178 @@
+﻿Gecko Game
+
+
+Is it a narrative game? Is it a visual novel? Is it a point and click adventure? Is it a short PCG lizard having simulation/experience?
+who knows.
+
+
+* Game starts. Title screen
+* Play →  intro narrative screen 
+* Point and click adventure with a sassy narrator and gecko shenanigans
+* The end
+
+
+Script
+
+
+BG info [appearing one phrase at a time with a next button between sections]
+At last, the day has come … after all this time, you’re finally fulfilling your wildest wishes … your deepest dreams … your darkest desires ….! Yes, that’s right: you’re buying a gecko.
+
+
+Pet shop BG appears
+Prompt: choose a lizard
+3 gecko options: leopard gecko, crested gecko, chinese cave gecko
+[whether the user can pick any will depend on the narrative? If not implemented options not allowed will get the dialogue: They’re out of stock of that kind of gecko.]
+
+
+After lizard chosen:
+Alright, time to choose a name for your new little buddy. Hmmm…. How about one of these?
+[3 options - PCG names]
+[if i implement it the user could also reject these names and type in whatever name they want]
+[there can be multiple versions of the following dialogue that are randomly selected if i wanna really play with PCG instead of focusing on making this a game]
+What a great name for sweet little [lizard-name]. Fits perfectly. Alright, now to pick out everything we need for the tank.
+[player can pick and choose however many of the following items as they want. Different item combos can lead to different endings:] 
+
+
+* Hide [important]
+* Water dish
+* Fake plant
+* Branch
+* Rock
+* Crickets [important]
+* Calcium powder
+* Paper towels
+* Heat lamp
+* Spray bottle
+
+
+[player clicks and drags these items into an inventory. Would an inventory system be too hard to make?? We’ll see. If not, they just choose them…]
+[when player clicks “check out”, it fades/transitions to home, tank view, empty]
+[player clicks and drags items from inventory into tank; depending on how many they have, different dialogue options follow
+
+
+[if the player only bought one item, even if it is a hide:
+You idiot, you think your lizard’s gonna like that barran tank? Where’s the intrigue? The mystery? Everything’s on display! This is no good. No good at all. Clearly, you lack the decision making powers necessary to own a living thing.
+[you can still put your lizard in
+
+
+[if the player bought multiple things and no hide:
+You call that a home?? There’s no bedroom. There’s no bathroom. There’s nowhere to sleep! This is a scandal. I’m not letting you put your new lizard in that shamble of a tank.
+[you can anyway
+[if so you can see the lizard in the tank and click on it/talk to it immediately
+
+
+[if the player bought any combo that includes a hide and crickets]
+Ah, now there’s an acceptable lizard home. Alright, now let’s get your lizard acquainted with their new space.
+
+
+[if the player bought everything:]
+How beautiful! Wonderful! Any gecko would be lucky to live in this tank. In fact, any number of species would be. Are you renting? No? Well then… let’s get your lizard acquainted with their new home.
+
+
+[if the player gets through this part they can now place their lizard in the tank by clicking and dragging it from the inventory to the tank. At this time the crickets are greyed out and cannot be selected.]
+[animation of the player putting the lizard in the tank]
+[lizard immediately scurries into the hide]
+
+
+Ah, a shy one, huh? 
+
+
+[crickets are no longer greyed out, gecko no longer in inventory. only action the player now has is to click and drag the crickets into the tank]
+[i guess they could also try dragging anything else they have in their inventory that didnt go into the tank, IE paper towel roll, calcium powder.]
+[animation of player doing whatever it is the user chooses. IE:
+
+
+[player clicks and drags calcium powder directly to the tank:
+Now what do you expect that to do? Think [lizard-name] is just gonna lick that up off the floor?
+
+
+[player clicks and drags crickets into tank:
+That’ll keep your new lizard full!
+
+
+[player clicks and drags crickets into tank and then later drags calcium to tank
+Yum, calcium crickets.
+
+
+[player clicks and drags paper towels into tank:
+There’s already paper towels lining the bottom. I guess you could double the layer, but doesn’t seem worth it, does it….?
+
+
+[clicks and drags spray bottle to tank:
+[no dialogue, just spray animation 
+
+
+[eventually if the player clicks around the tank that also spurs new dialogues
+
+
+[plants
+Yeup, fake plants. Work like a charm.
+
+
+[rock
+A nice sunny spot.
+
+
+[branch
+Good for climbing on!
+
+
+[heat lamp
+Gotta stay toasty warm when you’re cold-blooded, huh?
+
+
+[hide
+Yeah, [lizard-name] is in there, alright.
+
+
+[hide x2
+Your lizard is nocturnal. It’s asleep, you dumbass.
+
+
+[hide x3
+You’re really gonna keep poking at it?
+
+
+[hide x4
+Come on, leave [lizard-name] be already.
+
+
+[hide x5
+[lizard finally looks out, glaring
+Oh, wonderful. You’ve made it mad.
+
+
+[lizard
+[player scoops up lizard
+Woah, woah, hey, we’re not ready for that -- 
+
+
+Lizard:
+Narrator, shut up, will you? You’re more obnoxious than they are. 
+
+
+Narrator: 
+Okay, alright… Clearly I’m not wanted nor respected here. *door slam noise*
+
+
+[[dialogue options/endings will be planned out in Twine 2]]
+
+
+[good end: player bought the hide and fed the lizard crickets
+
+
+
+
+[bad end: player didn’t buy hide; potentially clicked on lizard immediately
+
+
+
+
+[bad end 2: player didn’t feed lizard
+
+
+
+
+[band ending
+You and your lizard formed an alt-rock band out of your garage
+Congratulations you’re going on a world tour
