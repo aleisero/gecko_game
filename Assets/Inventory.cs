@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-//Tutorial on Inventory System: https://www.youtube.com/watch?v=c47QYgsJrWc
+//Going to make a state machine or tree for this next week with the help of Alex
 
 public class Inventory : MonoBehaviour
 {
