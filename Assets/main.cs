@@ -8,12 +8,17 @@ public class main : MonoBehaviour
 
     public Button nextButton;
     public CanvasGroup dialogueBox;
+    public Sprite newBG;
+    public Image img;
+
+    public Button lizard;
 
     // Start is called before the first frame update
     void Start()
     {
         //https://docs.unity3d.com/ScriptReference/UI.Button-onClick.html
         //nextButton.onClick.AddListener(TaskOnClick);
+        
     }
 
     // Update is called once per frame
@@ -25,6 +30,11 @@ public class main : MonoBehaviour
     public void TaskOnClick()
     {
         Debug.Log("nextButton clicked");
+
+        //change the background sprite
+        //https://docs.unity3d.com/ScriptReference/UI.Image-sprite.html
+        img.sprite = newBG;
+
     }
 
     public void clearDialogue()
@@ -33,5 +43,10 @@ public class main : MonoBehaviour
         //https://answers.unity.com/questions/971009/make-ui-elements-invisible.html
         dialogueBox.alpha = 0f; //this makes everything transparent
         dialogueBox.blocksRaycasts = false; //this prevents the UI element to receive input events
+    }
+
+    public void lizardClick()
+    {
+        Debug.Log("lizard was clicked");
     }
 }

@@ -60,7 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DragHandler.cs" />
+    <Compile Include="Assets\Inventory.cs" />
     <Compile Include="Assets\main.cs" />
+    <Compile Include="Assets\Slot.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/oreoc/Documents/Unity HW/CMPM 121 Final Proj/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
