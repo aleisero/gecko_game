@@ -5,13 +5,16 @@ Is it a narrative game? Is it a visual novel? Is it a point and click adventure?
 who knows.
 
 
+Basic Framework:
 * Game starts. Title screen
 * Play →  intro narrative screen 
 * Point and click adventure with a sassy narrator and gecko shenanigans
 * The end
 
 
-Script
+
+
+Script:
 
 
 BG info [appearing one phrase at a time with a next button between sections]
@@ -155,24 +158,92 @@ Narrator:
 Okay, alright… Clearly I’m not wanted nor respected here. *door slam noise*
 
 
-[[dialogue options/endings will be planned out in Twine 2]]
+[[[endings:
+[[all endings final narrative cards are accompanied by a relevant illustration
 
 
 [good end: player bought the hide and fed the lizard crickets
 
 
+Lizard: Sorry about the glare. That’s just how I look in the dead of night, but since it’s you I can make an exception. [expression changes to something happier]
+
+
+Lizard: I mean after all, this place is pretty cushy, huh? And the all-you-can-eat buffet is included!
+
+
+Lizard: Mmmm, crickets.
+
+
+Lizard: I think this is gonna be pretty cool. 
+
+
+You put your lizard back in the tank and he retreats into the hide to get some more sleep. You then enjoy the rest of your mutually beneficial lizard and lizard-owner relationship!
+
+
+~~
+
+
+[okay end: player bought hide, didn’t feed lizard
+
+
+Lizard: So I know you’re pretty new at this, but listen.
+
+
+Lizard: This tank’s a home. A shiny, brand new home. The countertops and tile all shine. But you open up the refrigerator and it’s totally empty. 
+
+
+Lizard: So what I’m telling you is you need to high-tail it to the grocery store. Pick up some chops, yeah? A few snacks? Maybe do some meal prep when you get back?
+
+
+Lizard: I mean, it’s up to you. But if you don’t, you can’t expect me to stick around. That’s all I’m saying.
+
+
+You’ve been threatened but you have another chance. You buy your lizard some crickets and spend your days in quiet, isolated fear.
+
+
+~~
 
 
 [bad end: player didn’t buy hide; potentially clicked on lizard immediately
 
 
+Lizard: Listen, you probably mean well, but this is no kinda home for a guy like me.
 
 
-[bad end 2: player didn’t feed lizard
+Lizard: You expect me to sit there and let you stare at me at all hours?
 
 
+Lizard: That’s like being in a zoo, you know.
 
 
+Lizard: I wouldn’t call that comfortable.
+
+
+Lizard: Maybe you should try it. [glare gets even MORE EVIL].
+
+
+You get shoved into a human-sized tank to get stared at 24/7. A taste of your own medicine.
+
+
+~~
 [band ending
-You and your lizard formed an alt-rock band out of your garage
-Congratulations you’re going on a world tour
+[i have no idea how you get this band ending…,,,, probably an easter egg, or maybe you can buy a lizard-sized instrument at the petshop and if you do something specific it’ll take you to this ending
+[but they also have to have the hide/do the multiple clicks to get the lizard to come out thing for this one
+
+
+Lizard: That rhythmic tapping….
+
+
+Lizard: Hey, are you a drummer?
+
+
+Lizard: You are? That’s great! Listen, I’ve been looking for a drummer for ages… wanna join my alternative rock garage punk lizard band?
+
+
+Lizard: Don’t worry that you’re not a drummer. You can play a lizard-sized drum set anyways. It’ll be great!
+
+
+You and your new lizard form a band with some of the other, un-adopted lizards from the pet shop! Your music takes off with your lizard as the band’s front man.
+
+
+Congratulations, you’re going on a world tour!!!!
