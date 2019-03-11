@@ -11,31 +11,33 @@ public class DialogueHandler : MonoBehaviour
 
     public CanvasGroup goHomeButton;
 
+    public CanvasGroup StoreSlots;
+
     //Dialogue lists
     public List<string> currentList;
 
-    public List<string> introList = new List<string>();
-    public List<string> arriveHomeList = new List<string>();
+    private List<string> introList = new List<string>();
+    private List<string> arriveHomeList = new List<string>();
 
-    public List<string> cricketList = new List<string>();
-    public List<string> plantsList = new List<string>();
-    public List<string> branchList = new List<string>();
-    public List<string> waterDishList = new List<string>();
-    public List<string> rockList = new List<string>();
-    public List<string> heatLampList = new List<string>();
+    private List<string> cricketList = new List<string>();
+    private List<string> plantsList = new List<string>();
+    private List<string> branchList = new List<string>();
+    private List<string> waterDishList = new List<string>();
+    private List<string> rockList = new List<string>();
+    private List<string> heatLampList = new List<string>();
 
-    public List<string> hideList1 = new List<string>();
-    public List<string> hideList2 = new List<string>();
-    public List<string> hideList3 = new List<string>();
-    public List<string> hideList4 = new List<string>();
-    public List<string> hideList5 = new List<string>();
+    private List<string> hideList1 = new List<string>();
+    private List<string> hideList2 = new List<string>();
+    private List<string> hideList3 = new List<string>();
+    private List<string> hideList4 = new List<string>();
+    private List<string> hideList5 = new List<string>();
 
-    public List<string> lizardList = new List<string>();
+    private List<string> lizardList = new List<string>();
 
-    public List<string> goodEndList = new List<string>();
-    public List<string> okayEndList = new List<string>();
-    public List<string> badEndList = new List<string>();
-    public List<string> bandEndList = new List<string>();
+    private List<string> goodEndList = new List<string>();
+    private List<string> okayEndList = new List<string>();
+    private List<string> badEndList = new List<string>();
+    private List<string> bandEndList = new List<string>();
 
     public int dialogPos;
     public int hideListCounter;
@@ -60,8 +62,6 @@ public class DialogueHandler : MonoBehaviour
         arriveHomeList.Add("You call that a home?? There’s no bedroom. There’s no bathroom. There’s nowhere to sleep! This is a scandal. I’m not letting you put your new lizard in that shamble of a tank.");
         arriveHomeList.Add("Ah, now there’s an acceptable lizard home. Alright, now let’s get your lizard acquainted with their new space.");
         arriveHomeList.Add("How beautiful! Wonderful! Any gecko would be lucky to live in this tank. In fact, any number of species would be. Are you renting? No? Well then… let’s get your lizard acquainted with their new home.");
-        arriveHomeList.Add("");
-        arriveHomeList.Add("");
 
         //object lists
         cricketList.Add("That’ll keep your new lizard full!");
@@ -124,6 +124,9 @@ public class DialogueHandler : MonoBehaviour
 
         //disable GoHomeButton
         turnOffGoHome();
+        //disable Store Slots canvas group
+        StoreSlots.GetComponent<CanvasGroup>().alpha = 0f;
+        StoreSlots.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void changeDialogue()
@@ -149,6 +152,10 @@ public class DialogueHandler : MonoBehaviour
             //enable GoHomeButton
             goHomeButton.GetComponent<CanvasGroup>().alpha = 1f;
             goHomeButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+            //enable Store Slots canvas group
+            StoreSlots.GetComponent<CanvasGroup>().alpha = 1f;
+            StoreSlots.GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
 
         //when called this clears the current dialogue box
@@ -187,6 +194,10 @@ public class DialogueHandler : MonoBehaviour
 
         //showDialogue
         showDialogue();
+
+        //disable Store Slots canvas group
+        StoreSlots.GetComponent<CanvasGroup>().alpha = 0f;
+        StoreSlots.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
         turnOffGoHome();
     }
