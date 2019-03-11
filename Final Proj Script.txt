@@ -21,18 +21,41 @@ BG info [appearing one phrase at a time with a next button between sections]
 At last, the day has come … after all this time, you’re finally fulfilling your wildest wishes … your deepest dreams … your darkest desires ….! Yes, that’s right: you’re buying a gecko.
 
 
-Pet shop BG appears
-Prompt: choose a lizard
-3 gecko options: leopard gecko, crested gecko, chinese cave gecko
+[Pet shop BG appears
+
+
+Choose a lizard!
+
+
+...actually, looks like they only have one kind of lizard available today…
+
+
+It’s a Chinese Cave Gecko!
+
+
+Good choice.
+
+
+[3 gecko options: leopard gecko, crested gecko, chinese cave gecko
 [whether the user can pick any will depend on the narrative? If not implemented options not allowed will get the dialogue: They’re out of stock of that kind of gecko.]
 
 
 After lizard chosen:
-Alright, time to choose a name for your new little buddy. Hmmm…. How about one of these?
+Alright, time to choose a name for your new little buddy. Hmmm….
+
+
+Oh? You already chose one? What a good name!
+
+
+Now choose some items to care for your new gecko.
+
+
 [3 options - PCG names]
 [if i implement it the user could also reject these names and type in whatever name they want]
 [there can be multiple versions of the following dialogue that are randomly selected if i wanna really play with PCG instead of focusing on making this a game]
 What a great name for sweet little [lizard-name]. Fits perfectly. Alright, now to pick out everything we need for the tank.
+
+
 [player can pick and choose however many of the following items as they want. Different item combos can lead to different endings:] 
 
 
@@ -50,6 +73,8 @@ What a great name for sweet little [lizard-name]. Fits perfectly. Alright, now t
 
 [player clicks and drags these items into an inventory. Would an inventory system be too hard to make?? We’ll see. If not, they just choose them…]
 [when player clicks “check out”, it fades/transitions to home, tank view, empty]
+
+
 [player clicks and drags items from inventory into tank; depending on how many they have, different dialogue options follow
 
 
