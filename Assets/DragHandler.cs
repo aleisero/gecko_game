@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,7 +10,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public static GameObject itemBeingDragged;
     Vector3 startPosition;
     Transform startParent;
-    
+
+    public static List<string> InvList = new List<string>();
 
     public void OnBeginDrag (PointerEventData evenData)
     {
@@ -34,6 +34,14 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             transform.position = startPosition;
         }
+
+        if (GetComponent<CanvasGroup>().transform.parent.transform.parent.name == "Inventory")
+        {
+            //Debug.Log(GetComponent<CanvasGroup>().gameObject);
+            InvList.Add(GetComponent<CanvasGroup>().gameObject.name);
+            //Debug.Log(InvList[0]);
+        }
+
     }
     
 }

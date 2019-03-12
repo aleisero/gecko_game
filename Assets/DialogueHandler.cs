@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class DialogueHandler : MonoBehaviour
 {
@@ -13,11 +14,17 @@ public class DialogueHandler : MonoBehaviour
 
     public CanvasGroup StoreSlots;
 
+
     //Dialogue lists
-    public List<string> currentList;
+    private List<string> currentList;
 
     private List<string> introList = new List<string>();
-    private List<string> arriveHomeList = new List<string>();
+
+    //private List<string> arriveHomeList = new List<string>();
+    private List<string> arriveHomeList1 = new List<string>();
+    private List<string> arriveHomeList2 = new List<string>();
+    private List<string> arriveHomeList3 = new List<string>();
+    private List<string> arriveHomeList4 = new List<string>();
 
     private List<string> cricketList = new List<string>();
     private List<string> plantsList = new List<string>();
@@ -58,10 +65,10 @@ public class DialogueHandler : MonoBehaviour
         introList.Add("Now choose some items to care for your new gecko.");
 
         //arriveHomeList
-        arriveHomeList.Add("You idiot, you think your lizard’s gonna like that barran tank? Where’s the intrigue? The mystery? Everything’s on display! This is no good. No good at all. Clearly, you lack the decision making powers necessary to own a living thing.");
-        arriveHomeList.Add("You call that a home?? There’s no bedroom. There’s no bathroom. There’s nowhere to sleep! This is a scandal. I’m not letting you put your new lizard in that shamble of a tank.");
-        arriveHomeList.Add("Ah, now there’s an acceptable lizard home. Alright, now let’s get your lizard acquainted with their new space.");
-        arriveHomeList.Add("How beautiful! Wonderful! Any gecko would be lucky to live in this tank. In fact, any number of species would be. Are you renting? No? Well then… let’s get your lizard acquainted with their new home.");
+        arriveHomeList1.Add("You idiot, you think your lizard’s gonna like that barran tank? Where’s the intrigue? The mystery? Everything’s on display! This is no good. No good at all. Clearly, you lack the decision making powers necessary to own a living thing.");
+        arriveHomeList2.Add("You call that a home?? There’s no bedroom. There’s no bathroom. There’s nowhere to sleep! This is a scandal. I’m not letting you put your new lizard in that shamble of a tank.");
+        arriveHomeList3.Add("Ah, now there’s an acceptable lizard home. Alright, now let’s get your lizard acquainted with their new space.");
+        arriveHomeList4.Add("How beautiful! Wonderful! Any gecko would be lucky to live in this tank. In fact, any number of species would be. Are you renting? No? Well then… let’s get your lizard acquainted with their new home.");
 
         //object lists
         cricketList.Add("That’ll keep your new lizard full!");
@@ -176,16 +183,28 @@ public class DialogueHandler : MonoBehaviour
 
     public void exitInventory()
     {
-        //set currentList to arriveHomeList
-        currentList = arriveHomeList;
-        //change first item depending on inventory contents
-
-       //check inventory contents
-       //set dialogPos accordingly
-       //one item: 0
-       //any # items, no hide: 1
-       //any # items, including hide and crickets: 2
-       //all items: 3
+      
+       //check inventory contentsand set currentList accordingly
+       //one item -1 
+       if (DragHandler.InvList.Count == 1)
+        {
+            currentList = arriveHomeList1;
+        }
+       //any # items, no hide - 2
+        else if (!DragHandler.InvList.Contains("Hide"))
+        {
+            currentList = arriveHomeList2;
+        }
+       //only some items, including hide and crickets - 3
+        else if (DragHandler.InvList.Count <= 5 && DragHandler.InvList.Contains("Hide") && DragHandler.InvList.Contains("Cricket"))
+        {
+            currentList = arriveHomeList3; 
+        }
+       //six items, including hide and crickets
+        else if (DragHandler.InvList.Count == 6 && DragHandler.InvList.Contains("Hide") && DragHandler.InvList.Contains("Cricket"))
+        {
+            currentList = arriveHomeList4;
+        }  
 
         narText.GetComponent<Text>().text = currentList[dialogPos];
 

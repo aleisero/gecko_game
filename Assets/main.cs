@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class main : MonoBehaviour
@@ -35,14 +33,6 @@ public class main : MonoBehaviour
         //https://docs.unity3d.com/ScriptReference/UI.Image-sprite.html
         img.sprite = newBG;
 
-    }
-
-    public void clearDialogue()
-    {
-        //when called this clears the current dialogue box
-        //https://answers.unity.com/questions/971009/make-ui-elements-invisible.html
-        dialogueBox.alpha = 0f; //this makes everything transparent
-        dialogueBox.blocksRaycasts = false; //this prevents the UI element to receive input events
     }
 
     public void lizardClick()
