@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2143506009857683557}
   - component: {fileID: 2143506009857683561}
   m_Layer: 5
-  m_Name: Cricket Button
+  m_Name: Item Button Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4e5606b9deb604a89a35e5745b174f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lizard: {fileID: 0}
 --- !u!225 &2143506009857683561
 CanvasGroup:
   m_ObjectHideFlags: 0
