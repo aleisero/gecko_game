@@ -8,7 +8,12 @@ public class DialogueHandler : MonoBehaviour
 {
     public GameObject narText;
     public Image img;
-    public Sprite newBG;
+    public Sprite TankBG;
+
+    public GameObject goodEndBG;
+    public GameObject okayEndBG;
+    public GameObject badEndBG;
+    public GameObject bandEndBG;
 
     public GameObject lizardObj;
 
@@ -176,6 +181,25 @@ public class DialogueHandler : MonoBehaviour
         //https://answers.unity.com/questions/971009/make-ui-elements-invisible.html
         this.GetComponent<CanvasGroup>().alpha = 0f; //this makes everything transparent
         this.GetComponent<CanvasGroup>().blocksRaycasts = false; //this prevents the UI element to receive input events
+
+        //ENDING cases
+        if (currentList == goodEndList)
+        {
+            goodEndBG.transform.SetAsLastSibling();
+        }
+        else if (currentList == okayEndList)
+        {
+            okayEndBG.transform.SetAsLastSibling();
+        }
+        else if (currentList == badEndList)
+        {
+            badEndBG.transform.SetAsLastSibling();
+        }
+        else if (currentList == bandEndList)
+        {
+            bandEndBG.transform.SetAsLastSibling();
+        }
+
     }
 
     public void showDialogue()
@@ -219,7 +243,7 @@ public class DialogueHandler : MonoBehaviour
         narText.GetComponent<Text>().text = currentList[dialogPos];
 
         //change BG
-        img.sprite = newBG;
+        img.sprite = TankBG;
 
         //showDialogue
         showDialogue();

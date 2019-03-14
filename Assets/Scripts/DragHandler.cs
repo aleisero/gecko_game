@@ -52,11 +52,20 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             InvList.Add(GetComponent<CanvasGroup>().gameObject.name);
             TankList.Remove(GetComponent<CanvasGroup>().gameObject.name);
         }
+        
 
         if (GetComponent<CanvasGroup>().transform.parent.transform.parent.name == "Store")
-        {
+        {  
             //remove from list
-            InvList.Remove(GetComponent<CanvasGroup>().gameObject.name);
+            //InvList.Remove(GetComponent<CanvasGroup>().gameObject.name);
+            for (int i = 0; i < InvList.Count; i++)
+            {
+                if (InvList[i] == GetComponent<CanvasGroup>().gameObject.name)
+                {
+                    InvList.RemoveAt(i);
+                    break;
+                }
+            }
         }
 
         if (GetComponent<CanvasGroup>().transform.parent.transform.parent.name == "Tank")
