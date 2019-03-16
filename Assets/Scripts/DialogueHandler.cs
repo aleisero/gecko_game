@@ -15,6 +15,8 @@ public class DialogueHandler : MonoBehaviour
     public GameObject badEndBG;
     public GameObject bandEndBG;
 
+    public GameObject creditsImg;
+
     public GameObject lizardObj;
 
     public CanvasGroup goHomeButton;
@@ -40,7 +42,7 @@ public class DialogueHandler : MonoBehaviour
     private List<string> branchList = new List<string>();
     private List<string> waterDishList = new List<string>();
     private List<string> rockList = new List<string>();
-    private List<string> heatLampList = new List<string>();
+    private List<string> guitarList = new List<string>();
 
     private List<string> hideList1 = new List<string>();
     private List<string> hideList2 = new List<string>();
@@ -55,10 +57,13 @@ public class DialogueHandler : MonoBehaviour
     private List<string> badEndList = new List<string>();
     private List<string> bandEndList = new List<string>();
 
-    public int dialogPos;
-    public int hideListCounter;
+    private int dialogPos;
+    private int hideListCounter;
 
-    public bool isDiaShowing;
+    private bool isDiaShowing;
+
+    public AudioSource StoreSound;
+    public AudioSource TankSound;
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +90,7 @@ public class DialogueHandler : MonoBehaviour
         rockList.Add("A nice sunny spot.");
         branchList.Add("Good for climbing on!");
         waterDishList.Add("Ahh yes, the hydration station.");
-        heatLampList.Add("Gotta stay toasty warm when you’re cold-blooded, huh?");
+        guitarList.Add("Awww, what a cute lizard-sized guitar.");
 
         //hideList
         hideList1.Add("Yeah, your lizard is in there, alright.");
@@ -252,6 +257,9 @@ public class DialogueHandler : MonoBehaviour
         disableSlots(StoreSlots);
         enableSlots(TankSlots);
 
+        StoreSound.Stop();
+        TankSound.Play();
+
         turnOffGoHome();
     }
 
@@ -319,11 +327,11 @@ public class DialogueHandler : MonoBehaviour
         }
     }
 
-    public void heatLamp()
+    public void guitar()
     {
         if (!isDiaShowing)
         {
-            currentList = heatLampList;
+            currentList = guitarList;
             showDialogue();
         }
     }
@@ -391,5 +399,13 @@ public class DialogueHandler : MonoBehaviour
     public void closeTitle()
     {
         disableSlots(title);
+        creditsImg.transform.SetAsFirstSibling();
+        StoreSound.Play();
+    }
+
+    public void goToCredits()
+    {
+        creditsImg.transform.SetAsLastSibling();
+        
     }
 }

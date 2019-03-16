@@ -11,6 +11,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     Vector3 startPosition;
     Transform startParent;
 
+    private GameObject canvas;
+
     public static List<string> InvList = new List<string>();
     public static List<string> TankList = new List<string>();
 
@@ -21,6 +23,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         lizard = GameObject.Find("Lizard");
         InvList.Clear();
         TankList.Clear();
+
+        canvas = GameObject.Find("Canvas");
 
         InvList.Add("Lizard");
     }
@@ -51,11 +55,13 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             InvList.Add(GetComponent<CanvasGroup>().gameObject.name);
             TankList.Remove(GetComponent<CanvasGroup>().gameObject.name);
+            canvas.GetComponent<ButtonSound>().playInvPut();
         }
         
 
         if (GetComponent<CanvasGroup>().transform.parent.transform.parent.name == "Store")
-        {  
+        {
+            canvas.GetComponent<ButtonSound>().playInvPut();
             //remove from list
             //InvList.Remove(GetComponent<CanvasGroup>().gameObject.name);
             for (int i = 0; i < InvList.Count; i++)
@@ -80,16 +86,23 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 {
                     lizard.GetComponent<lizardScript>().TankWithHide();
                     //SFX: scurrying lizard noise
+                    canvas.GetComponent<ButtonSound>().playLizardScurry();
                 }
                 else if (InvList.Contains("Hide"))
                 {
                     lizard.GetComponent<lizardScript>().TankWithoutHide();
+                    canvas.GetComponent<ButtonSound>().playTankPut();
                 }
+            }
+            else
+            {
+                canvas.GetComponent<ButtonSound>().playTankPut();
             }
 
             if (GetComponent<CanvasGroup>().name == "Hide" && TankList.Contains("Lizard"))
             {
                 lizard.GetComponent<lizardScript>().TankWithHide();
+                canvas.GetComponent<ButtonSound>().playLizardScurry();
             }
         }
 
